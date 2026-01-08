@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randhy Paul Rodriguez Santos - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .photo-container {
+            flex-shrink: 0;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #4ecca3;
+            object-fit: cover;
+            background: #2a2a4a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4ecca3;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-info h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .header-info .title {
+            font-size: 1.1em;
+            color: #4ecca3;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #4ecca3;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+        }
+
+        .left-column {
+            padding: 30px;
+        }
+
+        .right-column {
+            background: #f8f9fa;
+            padding: 30px;
+            border-left: 1px solid #e0e0e0;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            color: #1a1a2e;
+            border-bottom: 2px solid #4ecca3;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* EXPERIENCE */
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .experience-company {
+            color: #4ecca3;
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: #666;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .experience-description ul {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        /* PROJECTS */
+        .project-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #4ecca3;
+        }
+
+        .project-name {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .project-tech {
+            font-size: 0.8em;
+            color: #4ecca3;
+            margin: 3px 0;
+        }
+
+        .project-desc {
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        /* SKILLS */
+        .skills-category {
+            margin-bottom: 15px;
+        }
+
+        .skills-category-title {
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        /* EDUCATION */
+        .education-item {
+            margin-bottom: 12px;
+        }
+
+        .education-degree {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 0.95em;
+        }
+
+        .education-school {
+            color: #666;
+            font-size: 0.85em;
+        }
+
+        .education-year {
+            color: #999;
+            font-size: 0.8em;
+        }
+
+        /* LANGUAGES */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        .language-level {
+            color: #4ecca3;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .skill-tag {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .project-item {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* PHOTO UPLOAD */
+        #photo-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="photo-container">
+                <label for="photo-input" class="photo" id="photo-display">
+                    <span>Click to<br>add photo</span>
+                </label>
+                <input type="file" id="photo-input" accept="image/*">
+            </div>
+            <div class="header-info">
+                <h1>Randhy Paul Rodriguez Santos</h1>
+                <div class="title">Full Stack Developer | Python Backend | AI-Powered Automation</div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span>📍</span> Dominican Republic
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span> <a href="mailto:ranx043@mail.com">ranx043@mail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span> <a href="https://linkedin.com/in/randhy-paul-rodriguez-santos-b03486a9" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>💻</span> <a href="https://github.com/Ranx043" target="_blank">github.com/Ranx043</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <!-- LEFT COLUMN -->
+            <div class="left-column">
+                <!-- SUMMARY -->
+                <div class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p style="font-size: 0.95em; color: #555;">
+                        Software developer specialized in Python backend, automated trading systems, and AI integration.
+                        5+ years building solutions that connect technology with business results.
+                        Strong background in mechatronics providing systematic approach to complex software architecture.
+                    </p>
+                </div>
+
+                <!-- EXPERIENCE -->
+                <div class="section">
+                    <h2 class="section-title">Experience</h2>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Lead Full Stack Developer</div>
+                                <div class="experience-company">Kodify International</div>
+                            </div>
+                            <div class="experience-date">Aug 2025 - Present</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Developed KOFACTURE, AI-powered invoicing system for Dominican Republic</li>
+                                <li>Built MT5 trading framework with 14,000+ lines of modular code</li>
+                                <li>Implemented multi-agent LLM orchestration systems</li>
+                                <li>Stack: Python, FastAPI, PostgreSQL, MQL5, n8n</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Senior Trader & Systems Developer</div>
+                                <div class="experience-company">FundedNext</div>
+                            </div>
+                            <div class="experience-date">Oct 2021 - Sep 2023</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Developed automated trading systems (Expert Advisors)</li>
+                                <li>Built risk management algorithms and backtesting tools</li>
+                                <li>Analyzed financial instruments: indices, metals, forex</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Senior Automation Technician</div>
+                                <div class="experience-company">Hayco</div>
+                            </div>
+                            <div class="experience-date">Mar 2020 - Nov 2020</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Maintained and improved automated industrial equipment</li>
+                                <li>Implemented process optimization projects</li>
+                                <li>Quality control for new products deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECTS -->
+                <div class="section">
+                    <h2 class="section-title">Featured Projects</h2>
+
+                    <div class="project-item">
+                        <div class="project-name">KOFACTURE</div>
+                        <div class="project-tech">Python, FastAPI, PostgreSQL, AI/OCR</div>
+                        <div class="project-desc">AI-powered invoicing system for Dominican Republic. Features: OCR invoice scanning, automatic tax reports (DGII), electronic billing (e-CF). Live at kofacture.com</div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-name">MT5 Trading Framework</div>
+                        <div class="project-tech">MQL5, OOP Architecture</div>
+                        <div class="project-desc">14,000+ lines modular framework for algorithmic trading with advanced risk management, pyramiding systems, and automated backtesting.</div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-name">Multi-Agent AI System</div>
+                        <div class="project-tech">Python, Claude API, MCP Servers</div>
+                        <div class="project-desc">LLM orchestration system with multiple AI agents for business automation and decision support.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+                <!-- SKILLS -->
+                <div class="section">
+                    <h2 class="section-title">Skills</h2>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Backend</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">MQL5</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Databases</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">SQLite</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">APIs & Integration</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">REST</span>
+                            <span class="skill-tag">WebSocket</span>
+                            <span class="skill-tag">OAuth2</span>
+                            <span class="skill-tag">n8n</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">AI/ML</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Claude API</span>
+                            <span class="skill-tag">OpenAI</span>
+                            <span class="skill-tag">MCP</span>
+                            <span class="skill-tag">LLMs</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">DevOps</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Frontend</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDUCATION -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+
+                    <div class="education-item">
+                        <div class="education-degree">Industrial Engineering</div>
+                        <div class="education-school">Universidad APEC</div>
+                        <div class="education-year">2019 - 2022</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-degree">Mechatronics Technology</div>
+                        <div class="education-school">ITLA</div>
+                        <div class="education-year">2014 - 2018</div>
+                    </div>
+                </div>
+
+                <!-- LANGUAGES -->
+                <div class="section">
+                    <h2 class="section-title">Languages</h2>
+
+                    <div class="language-item">
+                        <span>Spanish</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                    <div class="language-item">
+                        <span>English</span>
+                        <span class="language-level">Professional</span>
+                    </div>
+                </div>
+
+                <!-- LINKS -->
+                <div class="section">
+                    <h2 class="section-title">Links</h2>
+                    <div style="font-size: 0.9em;">
+                        <p style="margin-bottom: 8px;">
+                            <strong>Portfolio:</strong><br>
+                            <a href="https://kofacture.com" style="color: #4ecca3;">kofacture.com</a>
+                        </p>
+                        <p>
+                            <strong>GitHub:</strong><br>
+                            <a href="https://github.com/Ranx043" style="color: #4ecca3;">github.com/Ranx043</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Photo upload functionality
+        const photoInput = document.getElementById('photo-input');
+        const photoDisplay = document.getElementById('photo-display');
+
+        photoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    photoDisplay.innerHTML = `<img src="${e.target.result}" alt="Profile Photo">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
